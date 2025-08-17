@@ -1,0 +1,98 @@
+<!-- Created with Jaspersoft Studio version 7.0.2.final using JasperReports Library version 7.0.2-31532122640f516c6d17238ae0e41a08113d5ac0  -->
+<jasperReport name="Sample_chart" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a145b267-2b11-4cdb-bad0-7cfed712fde9">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="arfl-demo-employees-salary-chart"/>
+	<query language="JSON"><![CDATA[data]]></query>
+	<field name="DEPARTMENT_NAME" class="java.lang.String">
+		<description><![CDATA[DEPARTMENT_NAME]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="DEPARTMENT_NAME"/>
+	</field>
+	<field name="TOTAL_SALARY" class="java.lang.Integer">
+		<description><![CDATA[TOTAL_SALARY]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="TOTAL_SALARY"/>
+	</field>
+	<field name="TOTAL_EMPLOYEES" class="java.lang.Integer">
+		<description><![CDATA[TOTAL_EMPLOYEES]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="TOTAL_EMPLOYEES"/>
+	</field>
+	<variable name="v_total_sal" calculation="Sum" class="java.math.BigDecimal">
+		<expression><![CDATA[$F{TOTAL_SALARY}]]></expression>
+	</variable>
+	<variable name="v_total_employees" calculation="Sum" class="java.math.BigDecimal">
+		<expression><![CDATA[$F{TOTAL_EMPLOYEES}]]></expression>
+	</variable>
+	<background splitType="Stretch"/>
+	<title height="367" splitType="Stretch">
+		<element kind="chart" chartType="pie" uuid="c2e54978-d204-410e-b999-6b4094d5e2ba" x="0" y="2" width="555" height="350" evaluationTime="Report" linkTarget="Self" renderType="draw" theme="default" legendPosition="Right">
+			<titleFont fontSize="14.0" bold="true"/>
+			<titleExpression><![CDATA["Total Salary By Department"]]></titleExpression>
+			<dataset kind="pie" maxCount="7">
+				<otherSectionHyperlink linkType="None" linkTarget="Self"/>
+				<series>
+					<keyExpression><![CDATA[$F{DEPARTMENT_NAME}+" ("+$F{TOTAL_SALARY}+") "]]></keyExpression>
+					<valueExpression><![CDATA[$F{TOTAL_SALARY}]]></valueExpression>
+					<labelExpression><![CDATA[$F{DEPARTMENT_NAME}]]></labelExpression>
+					<sectionHyperlink linkType="None" linkTarget="Self"/>
+				</series>
+			</dataset>
+			<plot>
+				<itemLabel/>
+			</plot>
+		</element>
+		<property name="com.jaspersoft.studio.unit.height" value="px"/>
+	</title>
+	<columnHeader height="30">
+		<element kind="staticText" uuid="6135c283-b02f-4f33-95ad-3a867765cd67" mode="Opaque" x="0" y="0" width="309" height="30" forecolor="#FCFCFC" backcolor="#050000" vTextAlign="Middle">
+			<text><![CDATA[Department Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e52f31bf-a9d9-4a37-ab2f-e28f63ffd022"/>
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<box leftPadding="5"/>
+		</element>
+		<element kind="staticText" uuid="ba839c19-f773-4fa7-ac77-d4aafd577379" mode="Opaque" x="420" y="0" width="135" height="30" forecolor="#FCFCFC" backcolor="#050000" hTextAlign="Right" vTextAlign="Middle">
+			<text><![CDATA[Total Salary]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eb86f47b-5327-4500-a1de-09adeeb3e655"/>
+			<box rightPadding="5"/>
+		</element>
+		<element kind="staticText" uuid="4117f0a9-14df-416b-8ca8-d4899a4c73cc" mode="Opaque" x="310" y="0" width="109" height="30" forecolor="#FFFFFF" backcolor="#030000" hTextAlign="Right" vTextAlign="Middle">
+			<text><![CDATA[Total Employees]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ddfa97d8-2691-4ac0-b775-0b2f4c0f4fbd"/>
+			<box rightPadding="5"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="26">
+			<element kind="textField" uuid="1e8fdff6-5a48-435e-abc3-08671732ac61" x="0" y="0" width="308" height="20">
+				<expression><![CDATA[$F{DEPARTMENT_NAME}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e52f31bf-a9d9-4a37-ab2f-e28f63ffd022"/>
+				<box leftPadding="5"/>
+			</element>
+			<element kind="textField" uuid="58a22229-ef26-46ce-abc6-fd7b37dac7f8" x="420" y="0" width="135" height="20" hTextAlign="Right">
+				<expression><![CDATA[$F{TOTAL_SALARY}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eb86f47b-5327-4500-a1de-09adeeb3e655"/>
+				<box rightPadding="3"/>
+			</element>
+			<element kind="textField" uuid="cc2d8577-78a9-43e2-9567-21fcc01fcf7a" x="310" y="0" width="108" height="20" hTextAlign="Right">
+				<expression><![CDATA[$F{TOTAL_EMPLOYEES}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ddfa97d8-2691-4ac0-b775-0b2f4c0f4fbd"/>
+				<box rightPadding="3"/>
+			</element>
+		</band>
+	</detail>
+	<summary height="20">
+		<element kind="textField" uuid="757cc22d-f55d-496c-96ee-258f06e03330" x="0" y="0" width="420" height="20" hTextAlign="Right" vTextAlign="Middle">
+			<expression><![CDATA[$V{v_total_employees}]]></expression>
+			<box rightPadding="3">
+				<topPen lineWidth="0.25"/>
+				<bottomPen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="textField" uuid="ec26f884-7ed8-416b-ae88-edbbeab3d298" x="420" y="0" width="135" height="20" hTextAlign="Right" vTextAlign="Middle">
+			<expression><![CDATA[$V{v_total_sal}]]></expression>
+			<box rightPadding="3">
+				<topPen lineWidth="0.25"/>
+				<bottomPen lineWidth="0.25"/>
+			</box>
+		</element>
+	</summary>
+</jasperReport>

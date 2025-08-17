@@ -1,0 +1,23 @@
+<!-- Created with Jaspersoft Studio version 7.0.2.final using JasperReports Library version 7.0.2-31532122640f516c6d17238ae0e41a08113d5ac0  -->
+<jasperReport name="hello-world" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8ea2e900-477a-470d-b507-0ca3857c279a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Hello World"/>
+	<query language="JSON"><![CDATA[data]]></query>
+	<field name="message" class="java.lang.String">
+		<description><![CDATA[message]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="message"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="textField" uuid="ba4baa00-0153-4c66-b9e7-5bbf83f203ef" x="168" y="24" width="218" height="30" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$F{message}]]></expression>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="61" splitType="Stretch"/>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

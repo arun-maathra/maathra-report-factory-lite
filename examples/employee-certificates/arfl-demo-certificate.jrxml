@@ -1,0 +1,49 @@
+<!-- Created with Jaspersoft Studio version 7.0.2.final using JasperReports Library version 7.0.2-31532122640f516c6d17238ae0e41a08113d5ac0  -->
+<jasperReport name="arf-sample-certificate" language="java" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8056f38c-1e9c-4e7b-9ec7-adc0ecf9b249">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="arfl-demo-certificate"/>
+	<parameter name="p_from_emp_id" forPrompting="false" class="java.lang.String"/>
+	<parameter name="p_to_emp_id" forPrompting="false" class="java.lang.String"/>
+	<parameter name="p_certificate_img" forPrompting="false" class="java.lang.String"/>
+	<parameter name="SUB_REPORT_DIR" class="java.lang.String"/>
+	<parameter name="SUB_REPORT_DS" class="net.sf.jasperreports.json.data.JsonDataSource"/>
+	<query language="JSON"><![CDATA[data]]></query>
+	<field name="FULL_NAME" class="java.lang.String">
+		<description><![CDATA[FULL_NAME]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="FULL_NAME"/>
+		<property name="com.jaspersoft.studio.field.name" value="FULL_NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="FULL_NAME"/>
+	</field>
+	<field name="CURRENT_DATE" class="java.lang.String">
+		<description><![CDATA[CURRENT_DATE]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="CURRENT_DATE"/>
+		<property name="com.jaspersoft.studio.field.name" value="CURRENT_DATE"/>
+		<property name="com.jaspersoft.studio.field.label" value="CURRENT_DATE"/>
+	</field>
+	<field name="IMAGE_URL" class="java.lang.String">
+		<description><![CDATA[IMAGE_URL]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="IMAGE_URL"/>
+	</field>
+	<background height="555" splitType="Stretch">
+		<element kind="image" uuid="c8d4fc98-f1ee-41a8-af90-d85776c58296" x="0" y="0" width="804" height="555" scaleImage="FillFrame" onErrorType="Blank">
+			<expression><![CDATA[$P{SUB_REPORT_DIR} + "other-assets/images/" + $F{IMAGE_URL}]]></expression>
+		</element>
+		<property name="com.jaspersoft.studio.unit.height" value="px"/>
+	</background>
+	<detail>
+		<band height="555" splitType="Stretch">
+			<element kind="textField" uuid="12027b2e-db7c-4c8e-9250-0cd0a3aa8eba" x="180" y="275" width="400" height="45" fontSize="22.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{FULL_NAME}]]></expression>
+			</element>
+			<element kind="textField" uuid="b9d19632-2940-446f-abbb-47784bbb60c3" x="191" y="477" width="100" height="18" pattern="MMMMM dd, yyyy">
+				<expression><![CDATA[$F{CURRENT_DATE}]]></expression>
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			</element>
+			<element kind="textField" uuid="d6ef6a8f-a073-4e00-bb36-4957e30c9ec6" x="531" y="477" width="100" height="18" pattern="MMMMM dd, yyyy">
+				<expression><![CDATA[$F{CURRENT_DATE}]]></expression>
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			</element>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</detail>
+</jasperReport>

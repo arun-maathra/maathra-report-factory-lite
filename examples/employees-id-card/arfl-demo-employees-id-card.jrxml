@@ -1,0 +1,110 @@
+<!-- Created with Jaspersoft Studio version 7.0.2.final using JasperReports Library version 7.0.2-31532122640f516c6d17238ae0e41a08113d5ac0  -->
+<jasperReport name="id-card" language="java" pageWidth="192" pageHeight="279" columnWidth="172" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="f158409d-67b7-4cd0-a2ad-7b89e5cae351">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="arfl-demo-employees-id-card"/>
+	<property name="com.jaspersoft.studio.unit." value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="inch"/>
+	<parameter name="p_from_employee_id" forPrompting="false" class="java.lang.String"/>
+	<parameter name="p_to_employee_id" forPrompting="false" class="java.lang.String"/>
+	<parameter name="p_company_logo" forPrompting="false" class="java.lang.String"/>
+	<parameter name="p_user_img" forPrompting="false" class="java.lang.String"/>
+	<parameter name="SUB_REPORT_DS" class="net.sf.jasperreports.json.data.JsonDataSource"/>
+	<parameter name="SUB_REPORT_DIR" class="java.lang.String"/>
+	<query language="JSON"><![CDATA[data]]></query>
+	<field name="EMPLOYEE_ID" class="java.lang.Integer">
+		<description><![CDATA[EMPLOYEE_ID]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="EMPLOYEE_ID"/>
+		<property name="com.jaspersoft.studio.field.name" value="EMPLOYEE_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="EMPLOYEE_ID"/>
+	</field>
+	<field name="EMPLOYEE_NAME" class="java.lang.String">
+		<description><![CDATA[EMPLOYEE_NAME]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="EMPLOYEE_NAME"/>
+		<property name="com.jaspersoft.studio.field.name" value="EMPLOYEE_NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="EMPLOYEE_NAME"/>
+	</field>
+	<field name="PHONE_NUMBER" class="java.lang.String">
+		<description><![CDATA[PHONE_NUMBER]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="PHONE_NUMBER"/>
+		<property name="com.jaspersoft.studio.field.name" value="PHONE_NUMBER"/>
+		<property name="com.jaspersoft.studio.field.label" value="PHONE_NUMBER"/>
+	</field>
+	<field name="BARCODE_DATA" class="java.lang.String">
+		<description><![CDATA[BARCODE_DATA]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="BARCODE_DATA"/>
+		<property name="com.jaspersoft.studio.field.name" value="BARCODE_DATA"/>
+		<property name="com.jaspersoft.studio.field.label" value="BARCODE_DATA"/>
+	</field>
+	<field name="JOB_TITLE" class="java.lang.String">
+		<description><![CDATA[JOB_TITLE]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="JOB_TITLE"/>
+		<property name="com.jaspersoft.studio.field.name" value="JOB_TITLE"/>
+		<property name="com.jaspersoft.studio.field.label" value="JOB_TITLE"/>
+	</field>
+	<field name="DEPARTMENT_NAME" class="java.lang.String">
+		<description><![CDATA[DEPARTMENT_NAME]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="DEPARTMENT_NAME"/>
+		<property name="com.jaspersoft.studio.field.name" value="DEPARTMENT_NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="DEPARTMENT_NAME"/>
+	</field>
+	<field name="COMPANY_LOGO" class="java.lang.String">
+		<description><![CDATA[COMPANY_LOGO]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="COMPANY_LOGO"/>
+	</field>
+	<field name="EMPLOYEE_IMAGE" class="java.lang.String">
+		<description><![CDATA[EMPLOYEE_IMAGE]]></description>
+		<property name="net.sf.jasperreports.json.field.expression" value="EMPLOYEE_IMAGE"/>
+	</field>
+	<background splitType="Stretch">
+		<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+	</background>
+	<detail>
+		<band height="253" splitType="Stretch">
+			<element kind="staticText" uuid="42fd4ed7-ecd6-45e3-ab1f-bbbd11d1a6ab" mode="Transparent" x="0" y="30" width="170" height="20" forecolor="#080100" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[Demo Company]]></text>
+			</element>
+			<element kind="image" uuid="96842f28-5700-4efc-b9a8-1d9c6492d466" x="0" y="0" width="170" height="30" onErrorType="Blank" hImageAlign="Center">
+				<expression><![CDATA[$P{SUB_REPORT_DIR} + "other-assets/images/" + $F{COMPANY_LOGO}]]></expression>
+			</element>
+			<element kind="image" uuid="fb54ba7f-6b0a-48f8-a607-e1229664c12f" x="0" y="50" width="170" height="90" onErrorType="Blank" hImageAlign="Center">
+				<expression><![CDATA[$P{SUB_REPORT_DIR} + "other-assets/images/" + $F{EMPLOYEE_IMAGE}]]></expression>
+			</element>
+			<element kind="textField" uuid="1e77eec5-2437-46fe-af84-1e2195cd12f8" x="0" y="150" width="170" height="18" fontSize="12.0" bold="true" hTextAlign="Center">
+				<expression><![CDATA[$F{EMPLOYEE_NAME}]]></expression>
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			</element>
+			<element kind="textField" uuid="d0071ced-57ac-4388-acc3-371b52aac979" x="0" y="170" width="170" height="18" fontSize="12.0" hTextAlign="Center">
+				<expression><![CDATA[$F{JOB_TITLE}]]></expression>
+				<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+			</element>
+			<element kind="textField" uuid="92659722-d477-413d-93f9-22cc8c66c509" x="80" y="188" width="90" height="16">
+				<expression><![CDATA["  : "+$F{EMPLOYEE_ID}]]></expression>
+			</element>
+			<element kind="staticText" uuid="9481b5d7-63de-46a0-97b8-412b399fbbca" x="0" y="188" width="80" height="16" hTextAlign="Left">
+				<text><![CDATA[Employee ID]]></text>
+				<box leftPadding="20"/>
+			</element>
+			<element kind="textField" uuid="0da794f9-3cf6-42ad-92d1-86b861637f5c" x="80" y="203" width="90" height="20">
+				<expression><![CDATA["  : "+$F{PHONE_NUMBER}]]></expression>
+			</element>
+			<element kind="staticText" uuid="91d6d2af-4ecf-4d2e-98ec-ac6d34d1e5fe" x="0" y="204" width="80" height="19" hTextAlign="Left">
+				<text><![CDATA[Phone No]]></text>
+				<box leftPadding="20"/>
+			</element>
+			<element kind="component" uuid="c0cf184b-907d-4ebc-93e0-3cf4e89d6efa" x="6" y="223" width="162" height="30">
+				<component kind="barbecue" type="Code128" drawText="false" checksumRequired="false" barHeight="50">
+					<codeExpression><![CDATA[$F{JOB_TITLE}]]></codeExpression>
+				</component>
+				<property name="com.jaspersoft.studio.unit.barWidth" value="px"/>
+				<property name="com.jaspersoft.studio.unit.barHeight" value="px"/>
+			</element>
+		</band>
+	</detail>
+</jasperReport>
